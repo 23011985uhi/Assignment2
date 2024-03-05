@@ -1,28 +1,35 @@
-import {firestore} from '../../services/firebase';
-console.log(firestore)
+import {db} from '../../services/firebase'
+console.log(db)
+import { collection, getDocs } from "firebase/firestore"; 
 import {useState, useEffect} from 'react';
 
-function QuestionSection() {
+ function QuestionSection() {
   const [title, setTitle] = useState("");
   const [questionText, setQuestionText] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const questionId = "balances"
-
+  const questionId = "balances"  
+  
   useEffect(() => {
-    const fetchData= async () => {
+    // Inside useEffect, you should perform asynchronous operations like fetching data
+    const fetchData = async () => {
       try {
-        const snapshot = await firestore.collection("Questions").doc(questionId).get();
-        const questionData = snapshot.data();
-        console.log(questionData)
-        setTitle(questionData.title);
-        setQuestionText(questionData.question);
-        setImageUrl(questionData.questionImage);
+        const querySnapshot = await getDocs(collection(db, "Questions"));
+        querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data()}`);
+          // Update state variables accordingly with doc data
+        });
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+
+    // Call the fetchData function
     fetchData();
-}, [firestore, questionId]);
+
+    // Since we don't have any dependencies in useEffect, leave the dependency array empty
+  }, []);
+
+
 
   return (
   <div className="col-sm">
@@ -38,3 +45,4 @@ function QuestionSection() {
 };
 
 export default QuestionSection;
+
