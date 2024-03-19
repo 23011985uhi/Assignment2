@@ -1,6 +1,6 @@
 import {db} from '../../services/firebase'
-console.log(db)
-import { collection, getDocs } from "firebase/firestore"; 
+//console.log(db)
+import { doc, getDoc } from "firebase/firestore"; 
 import {useState, useEffect} from 'react';
 
  function QuestionSection() {
@@ -10,26 +10,31 @@ import {useState, useEffect} from 'react';
   const questionId = "balances"  
   
   useEffect(() => {
-    // Inside useEffect, you should perform asynchronous operations like fetching data
+    
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "Questions"));
-        querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${doc.data()}`);
-          // Update state variables accordingly with doc data
-        });
+        const docRef = doc(db, "Questions", "balances");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const questionData = docSnap.data();
+          const balancesData = questionData[questionId];
+          setTitle(balancesData.balances.questions.title);
+          setQuestionText(balancesData.balances.questions.fullquestion.question);
+          setImageUrl(balancesData.balances.questions.fullquestion.questionImage);
+          //console.log("Document data:", questionData);
+        } else {
+          console.log("No such document!");
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    // Call the fetchData function
     fetchData();
+  }, [questionId]); // Adding questionId to the dependency array to re-fetch data when it changes
 
-    // Since we don't have any dependencies in useEffect, leave the dependency array empty
-  }, []);
-
-
+  
+  
 
   return (
   <div className="col-sm">
