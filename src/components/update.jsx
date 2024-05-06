@@ -1,4 +1,4 @@
-from Russell Hunter to everyone:    8:11 PM
+/*from Russell Hunter to everyone:    8:11 PM
 import { auth } from './firebase'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
@@ -15,3 +15,4 @@ const snapshot = await getDocs(collection(db, "Chats"));
     match /Chats/{chats} {
         allow read, write: if request.auth != null;
     }
+    */
