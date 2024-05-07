@@ -3,6 +3,7 @@ import QuestionPage from './components/pages/questionPage'
 import Login from './components/pages/loginPage'
 import {auth} from './services/firebase'
 import { useState, useEffect } from 'react'
+import 'katex/dist/katex.min.css';
 import './App.css'
 
 
@@ -62,7 +63,7 @@ function App() {
 
 
     </Router>
-    <QuestionPage />
+    
   </div>
   )
 }
