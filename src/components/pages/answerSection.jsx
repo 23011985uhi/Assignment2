@@ -6,37 +6,10 @@ import Answer1 from '../Answers/answer1';
 import Answer2 from '../Answers/answer2';
 import Answer3 from '../Answers/answer3';
 import Answer4 from '../Answers/answer4';
-
+import Answer5 from '../Answers/answer5';
 
 function AnswerSection() {
-  const [text, setText] = useState("");
-  const [correctValue, setCorrectValue] = useState("");
-  
-  const answerId = "balances"
 
-  useEffect(() => {
-    
-    const fetchData = async () => {
-      try {
-        const docRef = doc(db, "Answers", "balances");
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const answerData = docSnap.data();
-          const balancesData = answerData[answerId];
-          setText(balancesData.answers.answer5.text);
-          setCorrectValue(balancesData.answers.answer5.correct);
-          
-          //console.log("Document data:", questionData);
-        } else {
-          console.log("No such document!");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
  
 
@@ -48,7 +21,7 @@ function AnswerSection() {
         <div className="col-sm d-grid gap-2">
           <button type="button" className="btn btn-secondary mb-2 p-4"><Answer1 /></button>
           <button type="button" className="btn btn-secondary mb-2 p-4"><Answer3 /></button>
-          <button type="button" className="btn btn-secondary mb-2 p-4">{text}</button>
+          <button type="button" className="btn btn-secondary mb-2 p-4"><Answer5 /></button>
           
         </div>
         <div className="col-sm d-grid gap-2">

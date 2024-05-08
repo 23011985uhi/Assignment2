@@ -5,7 +5,7 @@ import HintSection from "./hintSection";
 function QuestionPage() {
   return (
   <div className= "container">
-    <h1 className="text-center">Question Page</h1>
+    <h1 className="text-center">Balances Problem</h1>
     <div className="row">
       <QuestionSection />
       <HintSection />
