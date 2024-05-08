@@ -4,7 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import {useState, useEffect} from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
-import './answer1.css'
+
 
 const Answer1 = ({ onCheckAnswer, resetButton }) => {
   const [answer, setAnswer] = useState({ text: "", correct: false });
