@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
-const Answer4 = () => {
+const Answer4 = ({ onCheckAnswer, resetButton }) => {
   const [answer, setAnswer] = useState({ text: "", correct: false });
 
   useEffect(() => {
@@ -29,12 +29,16 @@ const Answer4 = () => {
     fetchData();
   }, []);
 
+  const checkAnswer = () => {
+    onCheckAnswer(answer.correct);
+    resetButton(); // Call the resetButton function
+  };
   
   return (
     <div>
-      <InlineMath math={answer.text} />
-      {/* You can render other components based on answer.correct if needed */}
-    </div>
+      <button type="button" className="btn btn-secondary mb-2 p-4 w-100 d-block " onClick={checkAnswer}><InlineMath math={answer.text} /></button>
+    {/* You can render other components based on answer.correct if needed */}
+  </div>
   );
 };
 export default Answer4;

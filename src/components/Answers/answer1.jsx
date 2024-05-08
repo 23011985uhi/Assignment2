@@ -4,8 +4,9 @@ import { doc, getDoc } from "firebase/firestore";
 import {useState, useEffect} from 'react';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import './answer1.css'
 
-const Answer1 = () => {
+const Answer1 = ({ onCheckAnswer, resetButton }) => {
   const [answer, setAnswer] = useState({ text: "", correct: false });
 
   useEffect(() => {
@@ -30,9 +31,14 @@ const Answer1 = () => {
   }, []);
 
   
+  const checkAnswer = () => {
+    onCheckAnswer(answer.correct);
+    resetButton(); // Call the resetButton function
+  };
+  
   return (
     <div>
-      <InlineMath math={answer.text} />
+      <button type="button" className="btn btn-secondary mb-2 p-4 w-100 d-block" onClick={checkAnswer}><InlineMath math={answer.text} /></button>
       {/* You can render other components based on answer.correct if needed */}
     </div>
   );

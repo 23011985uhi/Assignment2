@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 
 
 
-const Answer5 = () => {
+const Answer5 = ({ onCheckAnswer, resetButton }) => {
   const [answer, setAnswer] = useState({ text: "", correct: false });
 
   useEffect(() => {
@@ -29,10 +29,14 @@ const Answer5 = () => {
     fetchData();
   }, []);
 
+  const checkAnswer = () => {
+    onCheckAnswer(answer.correct);
+    resetButton(); // Call the resetButton function
+  };
   
   return (
     <div>
-      {answer.text}
+        <button type="button" className="btn btn-secondary mb-2 p-4 w-100 d-block " onClick={checkAnswer}>{answer.text}</button>
       {/* You can render other components based on answer.correct if needed */}
     </div>
   );
