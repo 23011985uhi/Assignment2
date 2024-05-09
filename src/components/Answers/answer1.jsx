@@ -6,7 +6,7 @@ import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 
-const Answer1 = ({ onCheckAnswer, resetButton }) => {
+const Answer1 = ({ onCheckAnswer, resetButton, updateAttemptInFirestore }) => {
   const [answer, setAnswer] = useState({ text: "", correct: false });
 
   useEffect(() => {
@@ -33,7 +33,8 @@ const Answer1 = ({ onCheckAnswer, resetButton }) => {
   
   const checkAnswer = () => {
     onCheckAnswer(answer.correct);
-    resetButton(); // Call the resetButton function
+    resetButton();    // Call the resetButton function
+    
   };
   
   return (

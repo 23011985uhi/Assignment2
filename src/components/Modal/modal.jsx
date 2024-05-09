@@ -14,6 +14,9 @@ function Modal  ({ isOpen, onClose }) {
       <button className="close-btn" onClick={closeModal}>X</button>
         <h2>This is a modal</h2>
         <p>Modal content goes here...</p>
+        <div className="d-flex align-items-end flex-column" >
+        <button className="btn btn-warning ">Confused</button>
+        </div>
         
       </div>
     </div>
