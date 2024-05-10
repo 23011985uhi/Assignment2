@@ -5,30 +5,19 @@ import {auth} from './services/firebase'
 import { useState, useEffect } from 'react'
 import 'katex/dist/katex.min.css';
 import './App.css'
+import { AuthProvider } from './components/pages/authContext';
+import { useAuth } from './components/pages/authContext';
 
 
 
+function PrivateRoute() {
+  const { user } = useAuth();
+  return user ? <Outlet /> : <Navigate to="/" />;
+}
 
-function PrivateRoute({authenticated}) {
-  return (
-    authenticated === true? (
-      <Outlet />
-    ) : (
-      <Navigate 
-      to={{pathname:'/'}}
-      />
-    ) 
-  );
-};
-
-function PublicRoute({authenticated}) {
-  return (
-    authenticated === false ? (
-      <Outlet />
-    ) : (
-      <Navigate to='/balances' />
-    )
-  )
+function PublicRoute() {
+  const { user } = useAuth();
+  return !user ? <Outlet /> : <Navigate to="/balances" />;
 }
 
 
@@ -50,7 +39,7 @@ function App() {
   )
 
   return ( 
-  <div>
+  <AuthProvider>
     <Router>
       <Routes>
         <Route exact path='/' element={<PublicRoute authenticated={authenticated} />}>
@@ -64,7 +53,7 @@ function App() {
 
     </Router>
     
-  </div>
+  </AuthProvider>
   )
 }
 
