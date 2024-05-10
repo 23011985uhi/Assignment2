@@ -1,0 +1,10 @@
+.relative-button {
+  position: relative;
+}
+
+.additional-text {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust the right spacing as needed */
+  transform: translateY(-50%);
+}
