@@ -3,9 +3,9 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 function Login() {
   return (
-  <div style={{ display:'flex', flex:1, height:'100vh' }}>
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
     <div style={{ display:'flex', flex:1, justifyContent:'center', alignItems:'center', minWidth:300 }}>
-      <button style={{backgroundColor:'red', borderWidth:0, paddingTop:12, paddingBottom:12, paddngLeft:24, paddingRight:24, color:'white', fontSize:18, fontWeight:'bold'}}
+      <button className="btn btn-danger fw-bold fs-5 px-4 py-2"
       onClick={async () => {
         const auth = getAuth();
         const provider = new GoogleAuthProvider();

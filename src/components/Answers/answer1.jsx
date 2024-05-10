@@ -47,8 +47,8 @@ const Answer1 = ({ onCheckAnswer, resetButton, checkAnswer, answerKey }) => {
           setAttempts(attempts);
           setTotalAttempts(totalAttempts);
   
-          console.log(attempts);
-          console.log(totalAttempts);
+         // console.log(attempts);
+         // console.log(totalAttempts);
         } else {
           console.log("No such document!");
         }

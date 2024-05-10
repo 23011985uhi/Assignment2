@@ -34,13 +34,13 @@ function AnswerSection() {
   };
 
   const updateAttemptInFirestore = async (answerKey) => {
-    console.log(`Updating ${answerKey}...`);
+   // console.log(`Updating ${answerKey}...`);
     const balancesRef = doc(db, "Hints", "Balances");
     try {
       await updateDoc(balancesRef, {
         [answerKey]: increment(1)
       });
-      console.log("Attempt count updated successfully");
+     // console.log("Attempt count updated successfully");
     } catch (error) {
       console.error("Error updating attempt count:", error);
     }

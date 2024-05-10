@@ -37,9 +37,9 @@ function PublicRoute({authenticated}) {
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   useEffect( ()=> {
-    console.log("authenticated ", authenticated)
+    //console.log("authenticated ", authenticated)
     auth.onAuthStateChanged((user)=> {
-      //console.log(user)
+      console.log(user)
       if (user) {
         setAuthenticated(true)
       } else {
