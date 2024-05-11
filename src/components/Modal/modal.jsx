@@ -1,10 +1,14 @@
 import './Modal.css'; 
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 function Modal  ({ isOpen, onClose}) {
   const [videoUrl, setVideoUrl] = useState('');
+  const [isConfused, setIsConfused] = useState(false);
+  const [videoTime, setVideoTime] = useState('');
+  const videoRef = useRef(null);
+
   useEffect(() => {
     if (isOpen) {
       const storage = getStorage();
@@ -27,31 +31,59 @@ function Modal  ({ isOpen, onClose}) {
 
   const closeModal = () => {
     onClose();
+    setIsConfused(false); // Reset on close
+    setVideoTime('');
   };
-  
+
+  const handleConfusedClick = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      const time = videoRef.current.currentTime.toFixed(0);
+      setVideoTime(time);
+      setIsConfused(true);
+    }
+  };
+
+  const handleCancel = () => {
+    setIsConfused(false);
+  };
+
+ 
+
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
       <button className="close-btn" onClick={closeModal}>X</button>
-        <h2>This is a help video</h2>
-        {videoUrl && (
-          <div className="video-container">
-            <video src={videoUrl} controls style={{ width: '100%' }} />
-          </div>
-        )}
-        <div className="row align-items-center mt-3" >
+      
+      <h2>This is a help video</h2>
+      {videoUrl && (
+        <div className="video-container" style={{ marginBottom: '20px' }}>
+          <video src={videoUrl} ref={videoRef} controls style={{ width: '100%' }} />
+        </div>
+      )}
+
+      {!isConfused ? (
+        <div className="row align-items-center mt-3">
           <div className="col">
             <h2>You can watch me play the dinosaur game badly for 30 seconds as an example video</h2>
           </div>
           <div className="col-auto">
-            <button className="btn btn-warning">Confused</button>
+            <button className="btn btn-warning" onClick={handleConfusedClick}>Confused</button>
           </div>
-          
         </div>
-        
-      </div>
+      ) : (
+        <div>
+          <input type="text" className="form-control" style={{ width: '100%', height: '50px' }}  defaultValue={`I am confused at ${videoTime} seconds`}  />
+          <div className="d-flex justify-content-between mt-3">
+            <button className="btn btn-primary" onClick={handleCancel}>Cancel</button>
+            <button className="btn btn-success">Submit</button>
+          </div>
+        </div>
+      )}
+      
     </div>
-  );
+  </div>
+);
 };
 
 export default Modal;
