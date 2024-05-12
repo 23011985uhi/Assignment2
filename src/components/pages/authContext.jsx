@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
 
       if (user) {
         const userEmail = user.email;
-        console.log(userEmail)
+       // console.log(userEmail)
         const adminListRef = doc(db, 'Admins', 'adminlist');
 
         getDoc(adminListRef)

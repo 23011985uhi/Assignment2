@@ -38,12 +38,23 @@
   color: #333;
 }
 
-.video-container {
-  width: 100%; /* Adjust width as needed */
-  max-width: 800px; /* Set maximum width for the video */
+.message-sent-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure the popup appears above everything else */
 }
 
-.video-container video {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
+.message-sent-popup p {
+  margin: 0;
+}
+
+.btn-dismiss {
+  margin-top: 10px;
 }
