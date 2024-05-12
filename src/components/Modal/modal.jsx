@@ -7,6 +7,8 @@ function Modal  ({ isOpen, onClose}) {
   const [videoUrl, setVideoUrl] = useState('');
   const [isConfused, setIsConfused] = useState(false);
   const [videoTime, setVideoTime] = useState('');
+  const [confusionText, setConfusionText] = useState('');
+  
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -46,9 +48,16 @@ function Modal  ({ isOpen, onClose}) {
 
   const handleCancel = () => {
     setIsConfused(false);
+    
   };
 
  
+
+  const handleSubmit = () => {
+    // Handle submission here
+    console.log('Submitting confusion text:', confusionText);
+    closeModal(); // Close the modal after submission
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -56,16 +65,19 @@ function Modal  ({ isOpen, onClose}) {
       <button className="close-btn" onClick={closeModal}>X</button>
       
       <h2>This is a help video</h2>
-      {videoUrl && (
-        <div className="video-container" style={{ marginBottom: '20px' }}>
-          <video src={videoUrl} ref={videoRef} controls style={{ width: '100%' }} />
-        </div>
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-8">
+          {videoUrl && (
+            <div className="video-container" style={{ marginBottom: '20px' }}>
+              <video src={videoUrl} ref={videoRef} controls style={{ width: '100%' }} />
+            </div>
       )}
-
+        </div>
+      </div>
       {!isConfused ? (
         <div className="row align-items-center mt-3">
           <div className="col">
-            <h2>You can watch me play the dinosaur game badly for 30 seconds as an example video</h2>
+            <h3>You can watch me play the dinosaur game badly for 30 seconds as an example video</h3>
           </div>
           <div className="col-auto">
             <button className="btn btn-warning" onClick={handleConfusedClick}>Confused</button>
@@ -73,10 +85,10 @@ function Modal  ({ isOpen, onClose}) {
         </div>
       ) : (
         <div>
-          <input type="text" className="form-control" style={{ width: '100%', height: '50px' }}  defaultValue={`I am confused at ${videoTime} seconds`}  />
-          <div className="d-flex justify-content-between mt-3">
-            <button className="btn btn-primary" onClick={handleCancel}>Cancel</button>
-            <button className="btn btn-success">Submit</button>
+          <textarea type="text" className="form-control" style={{ width: '100%', height: '80px' }}  defaultValue={`I am confused at ${videoTime} seconds`}  />
+          <div className="d-flex align-items-center mt-3"> 
+            <button className="btn btn-primary me-2" onClick={handleCancel}>Cancel</button>
+            <button className="btn btn-success ms-2" onClick={handleSubmit}>Submit</button>
           </div>
         </div>
       )}
