@@ -79,7 +79,8 @@ function Modal  ({ isOpen, onClose}) {
   
     try {
       // Generate a unique chat room ID
-      const chatroomId = Date.now().toString();
+      const chatroomId = Date.now();
+      
   
       // Get a reference to the Firebase Realtime Database
       const db = getDatabase();
@@ -126,7 +127,7 @@ function Modal  ({ isOpen, onClose}) {
       {!isConfused ? (
         <div className="row align-items-center mt-3">
           <div className="col">
-            <h3>You can watch me play the dinosaur game badly for 30 seconds as an example video</h3>
+            <h3>You can watch me play the dinosaur game for 30 seconds as an example video</h3>
           </div>
           <div className="col-auto">
             <button className="btn btn-warning" onClick={handleConfusedClick}>Confused</button>

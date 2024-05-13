@@ -1,6 +1,8 @@
 import  { useState, useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import {ChatComponent} from '../chatPage'
+import ChatList from './chatList'
+import Chats from './chats'
+import { SelectedChatroomProvider } from './chatroomId';
 import './adminPage.css'
 
 function AdminPage({ isOpen, onClose }) {
@@ -39,33 +41,26 @@ function AdminPage({ isOpen, onClose }) {
     onClose();
   };
 
-  const handleChatroomClick = (chatroomId) => {
-    setSelectedChatroom(chatroomId);
-  };
+  
   
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-btn" onClick={closeAdminPage}>X</button>
-        <h2>Admin Content</h2>
-        
-        <div className="row justify-content-center">
-          {chatrooms.map((chatroomId) => (
-            <div key={chatroomId} className="col-sm-6 col-md-4 col-lg-3 mb-4">
-              <div className="card h-100" onClick={() => handleChatroomClick(chatroomId)}>
-                <div className="card-body">
-                  <h5 className="card-title text-center">{chatroomId}</h5>
-                  {/* Additional fields can be rendered here */}
-                </div>
+    <SelectedChatroomProvider>
+      <div className="admin-modal" onClick={onClose}>
+        <div className="admin-content" onClick={(e) => e.stopPropagation()}>
+          <button className="close-btn-admin" onClick={closeAdminPage}>X</button>
+          <div className='container-fluid'>
+            <div className='row h-100'>
+              <div className='col-md-4 border-right'>
+                <ChatList /> 
               </div>
+            <div className='col-md-8'>
+              <Chats /> 
             </div>
-          ))}
+           </div> 
+          </div>
         </div>
-        {selectedChatroom && (
-          <ChatComponent chatRoomId={selectedChatroom} />
-        )}
       </div>
-    </div>
-  );
+    </SelectedChatroomProvider>
+    );
 }
 export default AdminPage;
