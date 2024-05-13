@@ -81,7 +81,7 @@ const Answer1 = ({ onCheckAnswer, resetButton, checkAnswer, answerKey }) => {
   
   const handleAnswerClick = () => {
     onCheckAnswer(answer.correct, answerKey);
-    resetButton();    // Call the resetButton function
+    resetButton();    
     checkAnswer(answer.correct);
   };
   

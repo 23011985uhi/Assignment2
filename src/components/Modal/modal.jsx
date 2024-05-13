@@ -42,7 +42,7 @@ function Modal  ({ isOpen, onClose}) {
 
   const closeModal = () => {
     onClose();
-    setIsConfused(false); // Reset on close
+    setIsConfused(false); 
     setVideoTime('');
     if (textareaRef.current) {
       textareaRef.current.value = '';
@@ -64,21 +64,21 @@ function Modal  ({ isOpen, onClose}) {
   };
 
   const handleSubmit = async () => {
-     // Access the current user from the AuthContext
+     
   
     const confusionText = textareaRef.current.value;
     setIsConfused(false);
     setVideoTime('');
     textareaRef.current.value = '';
     
-    // Ensure user is logged in before proceeding
+    
     if (!user) {
       console.error("User not logged in.");
       return;
     }
   
     try {
-      // Generate a unique chat room ID
+      // Generate a unique chatroomID
       const chatroomId = Date.now();
       
   
@@ -89,7 +89,7 @@ function Modal  ({ isOpen, onClose}) {
       // Push a new message to the chat room
       const newChatroomRef = push(chatroomsRef);
   
-      // Set the message data under the generated message ID
+      // Set the message data under the generated chatroomID
       await set(newChatroomRef, {
          
         name: user.displayName,
@@ -142,7 +142,7 @@ function Modal  ({ isOpen, onClose}) {
           </div>
         </div>
       )}
-       {/* Message sent confirmation popup */}
+       
         {isMessageSent && (
           <div className="message-sent-popup">
             <p className="align-items-center">Message sent successfully!</p>

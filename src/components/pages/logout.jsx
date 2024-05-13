@@ -5,7 +5,7 @@ function Logout() {
     const auth = getAuth();
     try {
       await signOut(auth);
-      // Optionally, redirect the user to the login page or do any other post-logout actions.
+      
     } catch (error) {
       console.error('Error signing out:', error);
     }

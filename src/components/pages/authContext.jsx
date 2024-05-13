@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
     }
   });
 
-  return unsubscribe; // unsubscribe on unmount
+  return unsubscribe; 
 }, []);
   return (
     <AuthContext.Provider value={{ user, isAdmin }}>

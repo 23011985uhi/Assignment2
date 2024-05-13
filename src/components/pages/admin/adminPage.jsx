@@ -20,11 +20,11 @@ function AdminPage({ isOpen, onClose }) {
       unsubscribe = onValue(chatroomsRef, (snapshot) => {
         const data = snapshot.val();
         if (data) {
-          // Convert object of chatrooms to an array of chatroom IDs
+          
           const chatroomIds = Object.keys(data);
           setChatrooms(chatroomIds);
         } else {
-          setChatrooms([]); // If no chatrooms exist, set empty array
+          setChatrooms([]); 
         }
       }, (error) => {
         console.error('Error fetching chatrooms:', error);
