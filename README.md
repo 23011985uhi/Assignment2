@@ -18,11 +18,10 @@ The repository can be found at the following URL:
 
 1. **Navigate to the desired directory**:
    Open your terminal or command prompt and change to the directory where you want to store the repository. For example:
-   ```bash
-   cd C:\Users\user\Documents
+   ```cd C:\Users\user\Documents
    
 2. **Clone Repository**:
-  Use command ```bash git clone https://github.com/23011985uhi/Assignment2.git ``` to save the repository to the desired location
+  Use command ``` git clone https://github.com/23011985uhi/Assignment2.git ``` to save the repository to the desired location
 
 3. **Open with VsCode**:
-   Use command ```bash start vscode://file/c:/users/user/documents/Assignment2``` to open the project with VScode.
+   Use command ``` start vscode://file/c:/users/user/documents/Assignment2``` to open the project with VScode.
