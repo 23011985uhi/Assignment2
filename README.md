@@ -55,4 +55,4 @@ The goal is to enhance user support by providing a chat support service for any 
 The features aim to create a comprehensive support system, reducing the need for direct support in the long run and providing real time relevant information.
 
 # Methodology
-[balances main look](https://github.com/23011985uhi/Assignment2/blob/main/balances%20question.PNG)
+![balances main look](https://github.com/23011985uhi/Assignment2/blob/main/balances%20question.PNG)
