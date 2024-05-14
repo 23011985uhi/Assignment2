@@ -51,4 +51,8 @@ The aim was to add 3 new features to an existing website, specifically to one pa
 - a live message system for users to ask questions and later get replies from admins or teachers.
 - implement a frequently asked questions section which displays beside the help video and shows admin/teacher answers that have been identified as answers to regularly asked questions.
   
-The goal was to increase support for user by providing a chat support service for any issues that may arise. The FAQ section would help minimise user queries being repeated as the most common or helpful admin replies would be displayed beside each help video to users before the need to contact support. The % hints on the answers would also influence user decisions as if they were not confident with their own answer they could check the % of attempts for each answer and then re-evaluate their decision and work if they suspected their answer to be wrong.
+The goal is to enhance user support by providing a chat support service for any issues that may arise. Additionally, an FAQ section will be implemented to minimize repeated user queries by displaying the most common and helpful admin replies next to each help video. This will allow users to find answers quickly before needing to contact support. The answer hints and statistics feature will show the percentage of attempts for each answer, helping users make informed decisions. Users can check these percentages to re-evaluate their decisions if they are not confident in their own answers. 
+The features aim to create a comprehensive support system, reducing the need for direct support in the long run and providing real time relevant information.
+
+# Methodology
+[balances main look](https://github.com/23011985uhi/Assignment2/blob/main/balances%20question.PNG)
