@@ -87,7 +87,10 @@ Clicking the confused button opens this textarea in which the user can enter the
 ![Chat database](https://github.com/23011985uhi/Assignment2/blob/main/Chat%20db.PNG)
 
 Each message creates a document under chatrooms in the realtime database where the document ID is the timestamp the message was sent. Within these documents are the messages themselves and each message has a random ID to distinguish it from others. As you can see the user details are saved with the user input (text field) which can then be used to identify users within the live chat component. The number of message submissions was supposed to be 1 but this interpretation simulates multiple messages being sent and how they would be responded to. 
+![adminbutton](https://github.com/23011985uhi/Assignment2/blob/main/adminbutton.PNG)
 
 ![admin panel](https://github.com/23011985uhi/Assignment2/blob/main/admin%20panel.PNG)
+
+The button to open this panel is only available to admins and sits just above the question image. Users and admins are differentiated through their email address on login and another component is rendered only for users to access chats. The admin panel consists of 2 components which are connected by a ```context``` which retrieves all of the chat data. The chatlist component maps through the realtime database and displays each document as a separate card component with the timestamp ID to differentiate between them. 
 
 
