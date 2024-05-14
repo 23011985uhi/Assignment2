@@ -79,6 +79,15 @@ Each answer component has ```onClick``` events that increments the corresponding
 
 ## User Questions & Live Chat
 The question submission method was through the ```onClick``` of a "confused" button that was in the same modal or page as the help videos from the Hints section. Clicking one of these Hints buttons would open the corresponding help video which in turn would contain the button to activate the message submission option.
+
 ![Message submission](https://github.com/23011985uhi/Assignment2/blob/main/help%20modal.PNG)
+
 Clicking the confused button opens this textarea in which the user can enter their question to be submitted for an admin to respond. The user details that are carried wthin the ```AuthContext``` from the login page are accessed when a message is sent which ties each message to a specific user. It sends the user: name, userID, the message text and a timestamp to identify when the message was sent.
+
 ![Chat database](https://github.com/23011985uhi/Assignment2/blob/main/Chat%20db.PNG)
+
+Each message creates a document under chatrooms in the realtime database where the document ID is the timestamp the message was sent. Within these documents are the messages themselves and each message has a random ID to distinguish it from others. As you can see the user details are saved with the user input (text field) which can then be used to identify users within the live chat component. The number of message submissions was supposed to be 1 but this interpretation simulates multiple messages being sent and how they would be responded to. 
+
+![admin panel](https://github.com/23011985uhi/Assignment2/blob/main/admin%20panel.PNG)
+
+
