@@ -102,9 +102,18 @@ The user chat button is only available to users and it opens the same chat panel
 - Chat panels are fairly basic in design, could be improved
 - wanted to implement notifications for users where the chats button would display some sort of notification for updated chatrooms
 - notifications in the chatlist for updated chatrooms as well
-- add an FAQ button to any admin responses only available to admins that would inturn save that response to the database which could then be accessed for display in the FAQ section that was not completed.
+- implement image upload for chat messaging
+
+## FAQ
+The FAQ section was not fully implmented within the design mainly due to time constraints.
+
+![faqtickets](https://github.com/23011985uhi/Assignment2/blob/main/faqtickets.PNG)
+
+There was a plan to add a button to admin responses within the chats that only admins could interact with or see. This button would save the selected message to faq section in firestore. These FAQs could then get displayed in the hints video modal only if there was data in the FAQ database so the modal shape was not morphed without the data.
 
   ## Evaluation
+On evaluation it can be concluded that 2 of the 3 features have been implemented and even expanded upon. 
+
 
   
 
