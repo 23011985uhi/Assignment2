@@ -1,7 +1,4 @@
 
-How to run:
-- npm install to install node modules ( vite )
-- npm run dev to open locally
 
 Achieved most goals except the FAQ section.
 Would have liked to incorporate image or video upload to messages as well
@@ -44,3 +41,14 @@ You will need to install any dependecies before being able to run the project lo
 ``` npm install ```
 to install them.
 To run the project locally you can either use ``` npm run preview``` or ```npm run dev``` to open at a local port.
+
+
+# Introduction
+
+The aim was to add 3 new features to an existing website, specifically to one page of the existing website (https://i-want-to-study-engineering.org/q/balances). It is to expand the functionality of the multiple choice style question system by adding:
+
+- a hint system on the answers which shows a % number of how many times that answer has been selected.
+- a live message system for users to ask questions and later get replies from admins or teachers.
+- implement a frequently asked questions section which displays beside the help video and shows admin/teacher answers that have been identified as answers to regularly asked questions.
+  
+The goal was to increase support for user by providing a chat support service for any issues that may arise. The FAQ section would help minimise user queries being repeated as the most common or helpful admin replies would be displayed beside each help video to users before the need to contact support. The % hints on the answers would also influence user decisions as if they were not confident with their own answer they could check the % of attempts for each answer and then re-evaluate their decision and work if they suspected their answer to be wrong.
