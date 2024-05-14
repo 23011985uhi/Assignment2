@@ -24,3 +24,23 @@ The repository can be found at the following URL:
 
 3. **Open with VsCode**:
    Use command ``` start vscode://file/c:/users/user/documents/Assignment2``` to open the project with VScode.
+
+### Using VSCode
+
+1. **Open VSCode**:
+   Launch VSCode on your computer.
+
+2. **Clone Repository**:
+   - Click the explorer icon on the sidebar or press `Ctrl+Shift+E`.
+   - Click the "Clone Repository" button.
+   - Enter the repository URL when prompted: ``` https://github.com/23011985uhi/Assignment2.git ```
+   - Choose the folder where you want to save the cloned repository on your computer.
+
+3. **Open with VSCode**:
+   After cloning, VSCode will prompt you to open the project immediately. Select "Yes" to open the project.
+
+## Startup
+You will need to install any dependecies before being able to run the project locally
+``` npm install ```
+to install them.
+To run the project locally you can either use ``` npm run preview``` or ```npm run dev``` to open at a local port.
