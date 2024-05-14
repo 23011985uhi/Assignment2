@@ -60,6 +60,8 @@ This would be the "main" screen for the balances question and the final look wit
 Before this there would be a login required which authenticates users by using firebase Google authentication.
 
 ## Authentication
-A simple login page was created where ```onclick``` of a button the user is prompted to sign in through their google account. Most of the process is automated through firebase so the firebase only has to be initialised within the project and then there is easy access to all this functionality.
-![login page](https://github.com/23011985uhi/Assignment2/blob/main/login%20page.PNG) ![google login](https://github.com/23011985uhi/Assignment2/blob/main/google%20login.PNG)
-when the user is authenticated they are redirected using react router to the main page shown earlier.
+A simple login page was created where ```onclick``` of a button the user is prompted to sign in through their google account. Most of the process is automated through firebase which only has to be initialised within the project and then there is easy access to all this functionality.
+![login page](https://github.com/23011985uhi/Assignment2/blob/main/login%20page.PNG) 
+![google login](https://github.com/23011985uhi/Assignment2/blob/main/google%20login.PNG)
+
+When the user is authenticated they are redirected using react router to the main page shown earlier.
