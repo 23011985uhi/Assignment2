@@ -63,9 +63,12 @@ Before this there would be a login required which authenticates users by using f
 A simple login page was created where ```onclick``` of a button the user is prompted to sign in through their google account. Most of the process is automated through firebase which only has to be initialised within the project and then there is easy access to all this functionality.
 ![login page](https://github.com/23011985uhi/Assignment2/blob/main/login%20page.PNG) 
 ![google login](https://github.com/23011985uhi/Assignment2/blob/main/google%20login.PNG)
+
 When the user is authenticated they are redirected using react router to the main page shown earlier.
 
 ## Answer & Hints
 The initial planning of tickets and processes was fairly basic , with ticket description minimal. There was a broad overarching plan, and only a few tickets were needed to outline the process.
 ![answer tickets](https://github.com/23011985uhi/Assignment2/blob/main/answer%20tickets.PNG)
+
+Implementing the display of the answers from the stored data on firebase was fairly straightforward. An extrenal API [KaTeX](https://katex.org/), had to be used for the answers to be displayed accurately in their mathematical form.
 
