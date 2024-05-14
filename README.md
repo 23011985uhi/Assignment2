@@ -55,4 +55,11 @@ The goal is to enhance user support by providing a chat support service for any 
 The features aim to create a comprehensive support system, reducing the need for direct support in the long run and providing real time relevant information.
 
 # Methodology
+This would be the "main" screen for the balances question and the final look with the answer percentages on display. 
 ![balances main look](https://github.com/23011985uhi/Assignment2/blob/main/balances%20question.PNG)
+Before this there would be a login required which authenticates users by using firebase Google authentication.
+
+## Authentication
+A simple login page was created where ```onclick``` of a button the user is prompted to sign in through their google account. Most of the process is automated through firebase so the firebase only has to be initialised within the project and then there is easy access to all this functionality.
+![login page](https://github.com/23011985uhi/Assignment2/blob/main/login%20page.PNG) ![google login](https://github.com/23011985uhi/Assignment2/blob/main/google%20login.PNG)
+when the user is authenticated they are redirected using react router to the main page shown earlier.
