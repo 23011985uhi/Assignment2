@@ -17,7 +17,7 @@ The repository can be found at the following URL:
 ### Using the Command Line Interface (CLI)
 
 1. **Navigate to the desired directory**:
-   Open your terminal or command prompt and change to the directory where you want to store the repository. For example: ``` cd C:\Users\user\Documents
+   Open your terminal or command prompt and change to the directory where you want to store the repository. For example: ``` cd C:\Users\user\Documents ```
 
 2. **Clone Repository**:
   Use command ``` git clone https://github.com/23011985uhi/Assignment2.git ``` to save the repository to the desired location
