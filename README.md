@@ -47,7 +47,7 @@ The aim was to add 3 new features to an existing website, specifically to one pa
 - implement a frequently asked questions section which displays beside the help video and shows admin/teacher answers that have been identified as answers to regularly asked questions.
   
 The goal is to enhance user support by providing a chat support service for any issues that may arise. Additionally, an FAQ section will be implemented to minimize repeated user queries by displaying the most common and helpful admin replies next to each help video. This will allow users to find answers quickly before needing to contact support. The answer hints and statistics feature will show the percentage of attempts for each answer, helping users make informed decisions. Users can check these percentages to re-evaluate their decisions if they are not confident in their own answers. 
-The features aim to create a comprehensive support system, reducing the need for direct support in the long run and providing real time relevant information.
+
 
 # Methodology
 This would be the "main" screen for the balances question and the final look with the answer percentages on display. 
@@ -112,8 +112,11 @@ The answer section hints process was mentioned earlier and was initially thought
 
 ![AnswersDatabase](https://github.com/23011985uhi/Assignment2/blob/main/answersdb.PNG)
 
-It was an unintentional total being incremented with each answer choice which was actually part of the required feature. It was decided to alter the specification slightly for answers to be checked on 1 click rather than 2 and linked the answer display function to each answer component ```onClick```. It has streamlined the answer process as the % attempts display has removed the need for a confirmatory answer submission button click and streamlined the answer process.
+It was an unintentional total being incremented with each answer choice which was actually part of the required feature. It was decided to alter the specification slightly for answers to be checked on 1 click rather than 2 and linked the answer display function to each answer component ```onClick```. It has streamlined the answer process as the % attempts display has removed the need for a confirmatory answer submission button click.
 One more change that could have been advantageous would have been the ability to toggle the % displays for the answers so that they weren't always on display but the user had full control over if they wanted/ needed the extra help. 
+
+The message and live chat feature was also fully implemented and expanded upon. The specifications only required a single message and live chat where as the final implementation simulated multiple help messages which created multiple live chats and gives the ability to access and reply in all of them. This implementation added a bit more difficulty in having to retrieve and display multiple chatrooms while also having access to the messages within each chatroom. The main issue was displaying the correct data for each chatroom as the ID had to be passed between components with a different data retrieval depending on the ID being passed down. 
+The final design surpasses the initial specification as the chat panel can be easily adapted into sections containing the chatrooms for multiple help videos with admins being able to reply to multiple users. It expands upon the requirements and allows for further development into a fully functional multi user chat service. 
 
 
 
