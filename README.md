@@ -1,9 +1,4 @@
 
-
-Achieved most goals except the FAQ section.
-Would have liked to incorporate image or video upload to messages as well
-
-
 # Project Setup Guide
 
 The repository can be found at the following URL:
@@ -109,10 +104,19 @@ The FAQ section was not fully implmented within the design mainly due to time co
 
 ![faqtickets](https://github.com/23011985uhi/Assignment2/blob/main/faqtickets.PNG)
 
-There was a plan to add a button to admin responses within the chats that only admins could interact with or see. This button would save the selected message to faq section in firestore. These FAQs could then get displayed in the hints video modal only if there was data in the FAQ database so the modal shape was not morphed without the data.
+There was a plan to add a button to admin responses within the chats that only admins could interact with or see using the user within the ```AuthContext``` to identify between admins or users. This button would save the selected message to faq section in firestore. These FAQs could then get displayed in the hints video modal only if there was data in the FAQ database so the modal shape was not morphed without the data.
 
   ## Evaluation
-On evaluation it can be concluded that 2 of the 3 features have been implemented and even expanded upon. 
+On evaluation it can be concluded that 2 of the 3 features have been implemented fully and even expanded upon. 
+The answer section hints process was mentioned earlier and was initially thought of as being a simple task. Upon implementation of the original specification of an aswer choice then a confirmatory click on the check answer button, there were some hurdles regarding the display change of the button and the incrementation in the database. The check answer button ```onclick``` was assigning and incrementing a new field in the database which was "undefined". This was identified and removed by removing the ```onClick``` for that button but each answer click was also incrementing the undefined field as well as its corresponding answer field. 
+
+![AnswersDatabase](https://github.com/23011985uhi/Assignment2/blob/main/answersdb.PNG)
+
+It was an unintentional total being incremented with each answer choice which was actually part of the required feature. It was decided to alter the specification slightly for answers to be checked on 1 click rather than 2 and linked the answer display function to each answer component ```onClick```. It has streamlined the answer process as the % attempts display has removed the need for a confirmatory answer submission button click and streamlined the answer process.
+One more change that could have been advantageous would have been the ability to toggle the % displays for the answers so that they weren't always on display but the user had full control over if they wanted/ needed the extra help. 
+
+
+
 
 
   
