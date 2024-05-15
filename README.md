@@ -87,7 +87,7 @@ Each message creates a document under chatrooms in the realtime database where t
 
 ![admin panel](https://github.com/23011985uhi/Assignment2/blob/main/admin%20panel.PNG)
 
-The button to open this panel is only available to admins and sits just above the question image. Users and admins are differentiated through their email address on login and another component is rendered only for users to access chats. The admin panel consists of 2 components which are connected by a ```context``` which retrieves all of the chat data. The chatlist component maps through the realtime database and displays each document as a separate card component with the timestamp ID to differentiate between them. The chat component ```onClick``` of one of the cards in the chatlist maps through the database for that specific chatroom and displays each message data within its own chat bubble. The colours and positioning of the chats are applied through checking the user ID with the user ID of the stored chat message resulting in the standard looking messaging service. There is a textarea in the chat component which sends the user input into the chatroom which has been selected as a new message again storing the same information ( name, text, userID , timestamp). The firebase realtime database has live updates which in turn creates the live messaging service as each message is sent the updated data is retrieved immediately and displayed.
+The button to open this panel is only available to admins and sits just above the question image. Users and admins are differentiated through their email address on login and another component is rendered only for users to access chats. The admin panel consists of 2 components which are connected by a ```context``` which retrieves all of the chat data. The chatlist component maps through the realtime database and displays each document as a separate card component with the timestamp ID to differentiate between them. The chat component ```onClick``` of one of the cards in the chatlist maps through the database for that specific chatroom and displays each message data within its own chat bubble. The colours and positioning of the chats are applied through checking the user ID with the user ID of the stored chat message resulting in the standard looking messaging service. There is a textarea in the chat component which sends the user input into the chatroom which has been selected as a new message again storing the same information ( name, text, userID , timestamp).
 
 ![userbutton](https://github.com/23011985uhi/Assignment2/blob/main/userchatbutton.PNG)
 
@@ -95,6 +95,7 @@ The user chat button is only available to users and it opens the same chat panel
 
 #### Improvements
 - Chat panels are fairly basic in design, could be improved
+- only allow users to view chats where they already have sent a help message
 - wanted to implement notifications for users where the chats button would display some sort of notification for updated chatrooms
 - notifications in the chatlist for updated chatrooms as well
 - implement image upload for chat messaging
